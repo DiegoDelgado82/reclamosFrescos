@@ -13,7 +13,7 @@
     <!-- Encabezado con logo -->
     <div class="text-center mb-4">
       <input type="file" id="logoInput" accept="image/*" style="display: none;" onchange="mostrarLogo(event)">
-      <img id="logo" src="" alt="Logo" style="max-height: 100px; cursor: pointer;" onclick="cargarLogo()">
+      <img id="logo" src="./assets/logo/logo.png" alt="Logo" style="max-height: 100px; cursor: pointer;" onclick="cargarLogo()">
       <h1>Reclamos de Frutas y Verduras</h1>
     </div>
 
@@ -47,9 +47,9 @@
           <button class="btn btn-success me-2" onclick="exportarComoExcel()" title="Exportar como Excel">
             <i class="fa-regular fa-file-excel"></i> Excel
           </button>
-          <button class="btn btn-danger me-2" onclick="exportarComoPDF()" title="Exportar como PDF">
+          <!--<button class="btn btn-danger me-2" onclick="exportarComoPDF()" title="Exportar como PDF">
             <i class="fa-regular fa-file-pdf"></i> PDF
-          </button>
+          </button>-->
           <button class="btn btn-info" onclick="exportarComoImagen()" title="Exportar como Imagen">
             <i class="fa-regular fa-image"></i> Imagen
           </button>
