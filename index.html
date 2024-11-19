@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reclamos de Frutas y Verduras</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <!-- Encabezado con logo -->
+    <div class="text-center mb-4">
+      <input type="file" id="logoInput" accept="image/*" style="display: none;" onchange="mostrarLogo(event)">
+      <img id="logo" src="" alt="Logo" style="max-height: 100px; cursor: pointer;" onclick="cargarLogo()">
+      <h1>Reclamos de Frutas y Verduras</h1>
+    </div>
+
+    <div class="row">
+      <!-- Formulario -->
+      <div class="col-md-6">
+        <label for="producto" class="form-label">Seleccionar Producto:</label>
+        <input type="text" id="producto" class="form-control" placeholder="Escribe para buscar...">
+        <label for="cantidad" class="form-label mt-3">Cantidad (kg/unidades):</label>
+        <input type="number" id="cantidad" class="form-control" step="0.01" min="0">
+        <button class="btn btn-primary mt-3" onclick="agregarReclamo()">Agregar Reclamo</button>
+      </div>
+
+      <!-- Tabla -->
+      <div class="col-md-6">
+        <h2>Productos Reclamados</h2>
+        <table class="table table-bordered" id="tablaReclamos">
+          <thead>
+            <tr>
+              <th>EAN</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <!-- Botones de exportación -->
+        <div class="text-end mt-3">
+          <button class="btn btn-success me-2" onclick="exportarComoExcel()" title="Exportar como Excel">
+            <i class="fa-regular fa-file-excel"></i> Excel
+          </button>
+          <button class="btn btn-danger me-2" onclick="exportarComoPDF()" title="Exportar como PDF">
+            <i class="fa-regular fa-file-pdf"></i> PDF
+          </button>
+          <button class="btn btn-info" onclick="exportarComoImagen()" title="Exportar como Imagen">
+            <i class="fa-regular fa-image"></i> Imagen
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
